@@ -3,11 +3,10 @@ kind: Service
 metadata:
   name: bank-leumi-app-service
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
-    - port: 443      # External port
-      targetPort: 5000  # port in the pod
-      nodePort: 32443  # port for node access
+    - port: 5000          # Port the Service will expose
+      targetPort: 5000   # Port inside the pod
   selector:
     app: bank-leumi-app
 
