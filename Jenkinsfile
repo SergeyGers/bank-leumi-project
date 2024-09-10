@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent agent_1
     environment {
         AWS_DEFAULT_REGION = 'us-east-1'
         ECR_REPOSITORY = '141330218853.dkr.ecr.us-east-1.amazonaws.com/bank-leumi-project-app'
@@ -42,7 +42,7 @@ pipeline {
                 script {
                     sh '''
                     kubectl apply -f deployment.yaml
-                    kubectl apply -f service.yaml
+                    kubectl apply -f Service.yaml
                     '''
                 }
             }
