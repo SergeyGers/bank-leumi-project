@@ -5,12 +5,12 @@ pipeline {
         ECR_REPOSITORY = '141330218853.dkr.ecr.us-east-1.amazonaws.com/bank-leumi-project-app'
     }
     stages {
-        stage('Clone Repository') {
+        stage('Checkout') {
             steps {
-                git 'https://github.com/SergeyGers/bank-leumi-project'
+                checkout scm
             }
         }
-    stage('Build Docker Image') {
+        stage('Build Docker Image') {
             steps {
                 script {
                     sh 'docker build -t bank-leumi-project-app .'
@@ -39,5 +39,4 @@ pipeline {
         }
     }
 }
-
 
