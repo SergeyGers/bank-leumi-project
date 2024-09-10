@@ -1,5 +1,5 @@
 pipeline {
-    agent agent_1
+    agent {label 'agent_1'}
     environment {
         AWS_DEFAULT_REGION = 'us-east-1'
         ECR_REPOSITORY = '141330218853.dkr.ecr.us-east-1.amazonaws.com/bank-leumi-project-app'
