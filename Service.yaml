@@ -1,13 +1,13 @@
----
 apiVersion: v1
 kind: Service
 metadata:
   name: bank-leumi-app-service
 spec:
-  type: LoadBalancer 
+  type: NodePort
   ports:
-    - port: 443      # Port the LoadBalancer will expose
-      targetPort: 5000  # The port inside the pod 
+    - port: 443      # External port
+      targetPort: 5000  # port in the pod
+      nodePort: 32443  # port for node access
   selector:
     app: bank-leumi-app
 
