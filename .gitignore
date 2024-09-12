@@ -1,2 +1,8 @@
+# Ignore Terraform directories and files
 .terraform/
-terraform_2/.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.lock.hcl
+# Ignore macOS system file
+.DS_Store
+
