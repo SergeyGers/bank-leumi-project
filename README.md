@@ -63,7 +63,7 @@ This project demonstrates a CI/CD pipeline that automates the build, containeriz
    Clone the GitHub repository containing the source code and Terraform files.
 
    ```bash
-   git clone <repository-url>
+   git clone [<repository-url>](https://github.com/SergeyGers/bank-leumi-project)
    cd <repository-directory>
    ```
 
