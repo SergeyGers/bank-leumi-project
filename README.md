@@ -24,13 +24,13 @@ This project demonstrates a CI/CD pipeline that automates the build, containeriz
    
 2. **Build and Test**:
    - Jenkins pulls the latest code from GitHub.
-   - The application is built and tested using Python (or other supported languages).
+   - The application is built and tested using Python.
 
 3. **Dockerization**:
    - The application is containerized using Docker, and a Docker image is created.
 
 4. **Push to ECR**:
-   - The Docker image is tagged and pushed to AWS Elastic Container Registry (ECR) for storage.
+   - The Docker image is tagged and pushed to AWS ECR for storage.
 
 5. **Kubernetes Deployment**:
    - The Jenkins pipeline deploys the Docker image from ECR to an AWS EKS cluster.
