@@ -3,6 +3,8 @@
 
 This project demonstrates a CI/CD pipeline that automates the build, containerization, and deployment of a Python application using Jenkins, GitHub, Docker, EKS (Kubernetes), and AWS ECR. The application is exposed through an Ingress controller on port 443.
 
+![Pipeline Diagram](./diagrams/sequence_diagram_for_pipeline.png)
+
 ## Tools and Technologies Used:
 - **Jenkins**: Used for automating the build, test, and deployment pipeline.
 - **GitHub**: Version control system to store the source code and trigger Jenkins pipelines on code commits.
