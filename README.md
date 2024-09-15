@@ -59,32 +59,7 @@ This project demonstrates a CI/CD pipeline that automates the build, containeriz
 - **Docker** installed for building images locally.
 - **GitHub** repository with webhooks set up to trigger Jenkins builds.
 
-## How to Use:
 
-1. **Clone the Repository**:
-   Clone the GitHub repository containing the source code and Terraform files.
-
-   ```bash
-   git clone [<repository-url>](https://github.com/SergeyGers/bank-leumi-project)
-   cd <repository-directory>
-   ```
-
-2. **Set Up Jenkins**:
-   - Configure Jenkins to pull the source code from GitHub.
-   - Ensure Jenkins has AWS credentials for accessing EKS and ECR.
-   - Create a `Jenkinsfile` in the project repository to define the pipeline stages.
-
-3. **Deploy Kubernetes Resources**:
-   - Apply the Kubernetes configuration files (`deployment.yaml`, `service.yaml`, and `ingress.yaml`) to deploy the application and expose it externally.
-
-   ```bash
-   kubectl apply -f deployment.yaml
-   kubectl apply -f service.yaml
-   kubectl apply -f ingress.yaml
-   ```
-
-4. **Access the Application**:
-   The application is available at the external IP address or DNS name provided by the Ingress controller on port 443.
 
 ## Configuration Details:
 - **EKS Cluster**: `bank-leumi-cluster`
