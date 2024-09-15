@@ -108,8 +108,5 @@ You can also delete the Docker images from ECR and tear down the Jenkins pipelin
 - **Pipeline Failure**: Check Jenkins logs for errors in the build, Dockerization, or deployment steps.
 - **Deployment Issues**: Ensure that the correct AWS permissions are in place for Jenkins to access EKS and ECR.
 
-## Author:
-This CI/CD pipeline project was developed to automate the deployment of a Python-based application using Jenkins, Docker, AWS EKS, and ECR, with Ingress for secure external access.
-
 ## URL
-    the website - a5ef772c5022a4818b863db0a33068cf-179798786.us-east-1.elb.amazonaws.com
+     https://a5ef772c5022a4818b863db0a33068cf-179798786.us-east-1.elb.amazonaws.com/
