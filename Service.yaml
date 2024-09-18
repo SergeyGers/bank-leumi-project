@@ -5,8 +5,7 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 5000          # Port the Service will expose
-      targetPort: 5000   # Port inside the pod
+    - port: 5000
+      targetPort: 5000
   selector:
     app: bank-leumi-app
-

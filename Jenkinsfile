@@ -41,6 +41,7 @@ pipeline {
             steps {
                 script {
                     sh '''
+		    aws eks update-kubeconfig --name bank_leumi	
                     kubectl apply -f deployment.yaml
                     '''
                 }
