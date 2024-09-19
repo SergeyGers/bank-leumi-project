@@ -26,9 +26,9 @@ Follow these steps to set up the EKS cluster:
 
 ### 1. Initialize Terraform
 
-\`\`\`bash
+```bash
 terraform init
-\`\`\`
+```
 
 This command initializes the Terraform configuration and downloads the necessary modules and plugins.
 
@@ -36,9 +36,9 @@ This command initializes the Terraform configuration and downloads the necessary
 
 Run the following command to create the resources:
 
-\`\`\`bash
+```bash
 terraform apply
-\`\`\`
+```
 
 Type `yes` when prompted to confirm the plan.
 
@@ -52,9 +52,9 @@ This will:
 
 Once the cluster is deployed, configure `kubectl` to access your EKS cluster:
 
-\`\`\`bash
+```bash
 aws eks --region us-east-1 update-kubeconfig --name bank_leumi
-\`\`\`
+```
 
 This command updates the kubeconfig file to use your new EKS cluster.
 
@@ -62,10 +62,10 @@ This command updates the kubeconfig file to use your new EKS cluster.
 
 1. Apply your deployment and service YAML files:
 
-   \`\`\`bash
+   ```bash
    kubectl apply -f deployment.yaml
    kubectl apply -f service.yaml
-   \`\`\`
+   ```
 
    These files define your application deployment and expose it via a service.
 
@@ -73,27 +73,27 @@ This command updates the kubeconfig file to use your new EKS cluster.
 
 Add the ingress-nginx Helm chart repository and update it:
 
-\`\`\`bash
+```bash
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 helm repo update
-\`\`\`
+```
 
 Install the Nginx ingress controller with a Network Load Balancer (NLB):
 
-\`\`\`bash
+```bash
 helm install nginx-ingress ingress-nginx/ingress-nginx \
   --set controller.service.type=LoadBalancer \
   --set controller.service.annotations."service\.beta\.kubernetes\.io/aws-load-balancer-type"="nlb" \
   --set controller.service.annotations."service\.beta\.kubernetes\.io/aws-load-balancer-scheme"="internet-facing"
-\`\`\`
+```
 
 ### 6. Apply Ingress Configuration
 
 Apply your ingress configuration:
 
-\`\`\`bash
+```bash
 kubectl apply -f ingress.yaml
-\`\`\`
+```
 
 This configures the ingress controller to route traffic to your services.
 
@@ -101,9 +101,9 @@ This configures the ingress controller to route traffic to your services.
 
 After the Nginx ingress controller is deployed, retrieve the DNS name of the NLB:
 
-\`\`\`bash
+```bash
 kubectl get svc nginx-ingress-ingress-nginx-controller -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'
-\`\`\`
+```
 
 This command will return the hostname of the NLB, which you can use to access your application.
 
@@ -111,8 +111,8 @@ This command will return the hostname of the NLB, which you can use to access yo
 
 To destroy the infrastructure when you no longer need it, run the following command:
 
-\`\`\`bash
+```bash
 terraform destroy
-\`\`\`
+```
 
 This will remove all resources created by this Terraform configuration.
