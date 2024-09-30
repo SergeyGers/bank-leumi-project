@@ -1,1 +1,2 @@
-![Infrastructure Diagram](./diagrams/sequence_diagram_for_pipeline.png)
+# Bank Leumi debugging infrastructure
+![Infrastructure Diagram](./diagrams/Infrastructure_Diagram.jpeg)
