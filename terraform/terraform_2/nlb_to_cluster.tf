@@ -50,7 +50,7 @@ resource "aws_security_group_rule" "allow_nlb_traffic" {
   from_port         = 80
   to_port           = 80
   protocol          = "tcp"
-  security_group_id = "sg-02a18275ff7e54631"  # Existing security group for your instances
+  security_group_id = "sg-02a18275ff7e54631"  # Existing security group for instances
 
   cidr_blocks = ["192.168.0.0/16"]  
 }
