@@ -20,6 +20,7 @@ spec:
       containers:
       - name: bank-leumi-app
         image: 141330218853.dkr.ecr.us-east-1.amazonaws.com/bank-leumi-project-app:latest # image
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000 # port exposed
 
