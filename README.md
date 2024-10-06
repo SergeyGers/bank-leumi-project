@@ -76,7 +76,6 @@ kubectl delete -f service.yaml
 kubectl delete -f ingress.yaml
 ```
 
-You can also delete the Docker images from ECR and tear down the Jenkins pipeline if necessary.
 
 ## Troubleshooting:
 - **Ingress Not Responding**: Verify that the Ingress controller is properly set up and the application pods are running.
