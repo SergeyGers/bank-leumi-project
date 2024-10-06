@@ -42,7 +42,7 @@ pipeline {
                 script {
                     sh '''
 		    aws eks update-kubeconfig --name bank_leumi	
-                    kubectl apply -f deployment.yaml
+                    kubectl rollout restart deployment bank-leumi-app-deployment
                     '''
                 }
             }

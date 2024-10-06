@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: bank-leumi-app-deployment
-  annotations:
-    kubernetes.io/change-cause: "Forced redeploy at $(date)"
 spec:
   replicas: 2  # Number of pod replicas
   selector:
@@ -18,13 +16,9 @@ spec:
     metadata:
       labels:
         app: bank-leumi-app
-      annotations:
-        redeploy: "$(date)"
     spec:
       containers:
       - name: bank-leumi-app
-        image: 141330218853.dkr.ecr.us-east-1.amazonaws.com/bank-leumi-project-app:latest # Image to pull
-        imagePullPolicy: Always  # Ensures the latest image is always pulled
+        image: 141330218853.dkr.ecr.us-east-1.amazonaws.com/bank-leumi-project-app:latest # image
         ports:
-        - containerPort: 5000  # Port exposed
-  revisionHistoryLimit: 2
+        - containerPort: 5000 # port exposed
